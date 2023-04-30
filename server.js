@@ -20,7 +20,7 @@ server.get('*', (req,res) => {
 
 // dB connection
 const startserver = async()=>{
-    await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.5kk0hsk.mongodb.net/${process.env.DB}?retryWrites=true&w=majority`).then(()=>{
+    await mongoose.connect(process.env.DB_URI).then(()=>{
         console.log('db connected successfully');
     })
     server.listen(PORT, ()=>{
