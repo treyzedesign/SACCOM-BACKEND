@@ -104,3 +104,45 @@ SACCOM BACKEND API
         }
     ```
 
+* FORGOT PASSWORD
+    - the user will have to input their email for Authentication. If their mail exists, an email will be sent to their mailbox
+    
+    - URL: {BASE_URL}/api/v1/forgot-Password
+    - METHOD: POST
+    - REQUEST BODY: 
+    ```
+    {
+        email: 'example@gmail.com',
+    }
+    
+    ```
+    - RESPONSE:
+    ```
+        {
+            "message": "Email has been sent to your mailbox,  check your mail to reset password",
+            "data": {
+                "id": {user id},
+                "email": "example@gmail.com",
+                "firstName": "saviour"
+            }
+        }
+    ```
+
+* CHANGE PASSWORD
+    - This endpoint updates the user password.
+    - PARAM: `user id`
+    - URL: {BASE_URL}/api/v1/change-password/{PARAM}
+    - METHOD: POST
+    - REQUEST BODY: 
+    ```
+    {
+        email: 'example@gmail.com',
+    }
+    
+    ```
+    - RESPONSE:
+    ```
+        {
+           "message": "password has been changed successfully"
+        }
+    ```
